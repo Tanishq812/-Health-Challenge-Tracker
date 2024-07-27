@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxChartsModule } from '@swimlane/ngx-charts'; // Import NgxChartsModule
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WorkoutFormComponent } from './workout-form/workout-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WorkoutFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    NgxPaginationModule,
+    NgxChartsModule // Add NgxChartsModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
